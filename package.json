@@ -1,0 +1,35 @@
+{
+  "name": "dtw",
+  "version": "0.0.1",
+  "description": "Dynamic time warping",
+  "main": "index.js",
+  "dependencies": {
+    "debug": ">= 0.7.3"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "jsdox": "*"
+  },
+  "scripts": {
+    "test": "mocha tests/*.js",
+    "doc": "jsdox lib/dtw.js --output doc/api/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/langholz/dtw.git"
+  },
+  "keywords": [
+    "signal",
+    "processing",
+    "dynamic",
+    "time",
+    "warping"
+  ],
+  "author": "Elmar Langholz <langholz@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/langholz/dtw/issues"
+  },
+  "homepage": "https://github.com/langholz/dtw"
+}
