@@ -25,7 +25,8 @@ var dtw = new DTW();
 var cost = dtw.compute(s, t);
 var path = dtw.path();
 console.log('Cost: ' + cost);
-console.log('Path: ' + path);
+console.log('Path: ');
+console.log(path);
 ```
 
 ## Documentation
