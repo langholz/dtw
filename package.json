@@ -1,6 +1,6 @@
 {
   "name": "dtw",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Dynamic time warping",
   "main": "index.js",
   "dependencies": {

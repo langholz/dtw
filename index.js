@@ -1,3 +1,1 @@
-module.exports = {
-    DTW: require('./lib/dtw')
-};
+module.exports = require('./lib/dtw');
