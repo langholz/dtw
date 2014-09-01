@@ -33,5 +33,4 @@ console.log(path);
 * [API reference](./doc/api/dtw.md)
 
 ## Future work
-* Add locality constraint.
 * Implement fast (O(n)) and sparse versions.

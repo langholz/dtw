@@ -23,8 +23,8 @@ class DTW
 ---------
 **Methods**
 
-DTW.compute(firstSequence, secondSequence)
-------------------------------------------
+DTW.compute(firstSequence, secondSequence, \[window\])
+------------------------------------------------------
 Computes the optimal match between two provided sequences.
 
 
@@ -33,6 +33,8 @@ Computes the optimal match between two provided sequences.
 **firstSequence**:  *number[]*,  The first sequence.
 
 **secondSequence**:  *number[]*,  The second sequence.
+
+**[window]**:  *number*,  The window parameter (for the locality constraint) to use.
 
 **Returns**
 
