@@ -1,51 +1,53 @@
-DTW API
-=======
-**Author:** Elmar Langholz
+# Global
 
-DTW(\[options\])
-----------------
+
+
+
+
+* * *
+
+## Class: DTW
+Create a DTW object
+
+### DTW.DTW(options) 
+
 Initializes a new instance of the `DTW`. If no options are provided the squared euclidean distance function is used.
 
-
 **Parameters**
 
-**[options]**:  *DTWOptions*,  The options to initialize the dynamic time warping instance with.
+**options**: `DTWOptions`, The options to initialize the dynamic time warping instance with.
 
-class DTWOptions
-----------------
-**Members**
 
-**distanceMetric**:  *string*,  The distance metric to use: `'manhattan' | 'euclidean' | 'squaredEuclidean'`.
+### DTW.compute(firstSequence, secondSequence, window) 
 
-**distanceFunction**:  *function*,  The distance function to use. The function should accept two numeric arguments and return the numeric distance. e.g. function (a, b) { return a + b; }
-
-class DTW
----------
-**Methods**
-
-DTW.compute(firstSequence, secondSequence, \[window\])
-------------------------------------------------------
 Computes the optimal match between two provided sequences.
 
-
 **Parameters**
 
-**firstSequence**:  *number[]*,  The first sequence.
+**firstSequence**: `Array.&lt;number&gt;`, The first sequence.
 
-**secondSequence**:  *number[]*,  The second sequence.
+**secondSequence**: `Array.&lt;number&gt;`, The second sequence.
 
-**[window]**:  *number*,  The window parameter (for the locality constraint) to use.
+**window**: `number`, The window parameter (for the locality constraint) to use.
 
-**Returns**
+**Returns**: `number`, The similarity between the provided temporal sequences.
 
-*number*,  The similarity between the provided temporal sequences.
+### DTW.path() 
 
-DTW.path()
-----------
 Retrieves the optimal match between two provided sequences.
 
+**Returns**: `Array.&lt;number&gt;`, The array containing the optimal path points.
 
-**Returns**
 
-*number[]*,  The array containing the optimal path points.
+
+* * *
+
+
+
+
+
+
+
+
+
 

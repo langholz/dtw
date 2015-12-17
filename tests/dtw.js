@@ -1,5 +1,7 @@
 var should = require('should');
-var DTW = require('../lib/dtw.js');
+var DTW = require('../lib/dtw');
+var dp = require('../lib/dataPoint');
+var DataPoint = dp.DataPoint;
 
 describe('DTW', function () {
     describe('#Constructor()', function () {
@@ -102,7 +104,7 @@ describe('DTW', function () {
             }
         });
 
-        it('should compute a valid similarity value for the squared euclidean distance metric', function () {
+        it('should compute a valid similarity value for the squared euclidean distance metric with one-dimensional number array', function () {
             var options = { distanceMetric: 'squaredEuclidean' };
             var dtw = new DTW(options);
             var s = [1, 1, 1, 2, 2, 2, 3, 3, 3, 2, 2, 4, 4, 4, 4];
@@ -111,7 +113,25 @@ describe('DTW', function () {
             cost.should.equal(0);
         });
 
-        it('should compute a valid similarity value for the euclidean distance metric', function () {
+        it('should compute a valid similarity value for the squared euclidean distance metric with one-dimensional DataPoint array', function () {
+            var options = { distanceMetric: 'squaredEuclidean' };
+            var dtw = new DTW(options);
+            var s = [
+                new DataPoint(1), new DataPoint(1), new DataPoint(1),
+                new DataPoint(2), new DataPoint(2), new DataPoint(2),
+                new DataPoint(3), new DataPoint(3), new DataPoint(3),
+                new DataPoint(2), new DataPoint(2), new DataPoint(4),
+                new DataPoint(4), new DataPoint(4), new DataPoint(4)];
+            var t = [
+                new DataPoint(1), new DataPoint(1), new DataPoint(2),
+                new DataPoint(2), new DataPoint(3), new DataPoint(3),
+                new DataPoint(2), new DataPoint(4), new DataPoint(4),
+                new DataPoint(4)];
+            var cost = dtw.compute(s, t);
+            cost.should.equal(0);
+        });
+
+        it('should compute a valid similarity value for the euclidean distance metric with one-dimensional number array', function () {
             var options = { distanceMetric: 'euclidean' };
             var dtw = new DTW(options);
             var s = [1, 1, 1, 2, 2, 2, 3, 3, 3, 2, 2, 4, 4, 4, 4];
@@ -120,11 +140,47 @@ describe('DTW', function () {
             cost.should.equal(0);
         });
 
-        it('should compute a valid similarity value for the manhattan distance metric', function () {
+        it('should compute a valid similarity value for the euclidean distance metric with one-dimensional DataPoint array', function () {
+            var options = { distanceMetric: 'euclidean' };
+            var dtw = new DTW(options);
+            var s = [
+                new DataPoint(1), new DataPoint(1), new DataPoint(1),
+                new DataPoint(2), new DataPoint(2), new DataPoint(2),
+                new DataPoint(3), new DataPoint(3), new DataPoint(3),
+                new DataPoint(2), new DataPoint(2), new DataPoint(4),
+                new DataPoint(4), new DataPoint(4), new DataPoint(4)];
+            var t = [
+                new DataPoint(1), new DataPoint(1), new DataPoint(2),
+                new DataPoint(2), new DataPoint(3), new DataPoint(3),
+                new DataPoint(2), new DataPoint(4), new DataPoint(4),
+                new DataPoint(4)];
+            var cost = dtw.compute(s, t);
+            cost.should.equal(0);
+        });
+
+        it('should compute a valid similarity value for the manhattan distance metric with one-dimensional number array', function () {
             var options = { distanceMetric: 'manhattan' };
             var dtw = new DTW(options);
             var s = [1, 1, 1, 2, 2, 2, 3, 3, 3, 2, 2, 4, 4, 4, 4];
             var t = [1, 1, 2, 2, 3, 3, 2, 4, 4, 4];
+            var cost = dtw.compute(s, t);
+            cost.should.equal(0);
+        });
+
+        it('should compute a valid similarity value for the manhattan distance metric with one-dimensional DataPoint array', function () {
+            var options = { distanceMetric: 'manhattan' };
+            var dtw = new DTW(options);
+            var s = [
+                new DataPoint(1), new DataPoint(1), new DataPoint(1),
+                new DataPoint(2), new DataPoint(2), new DataPoint(2),
+                new DataPoint(3), new DataPoint(3), new DataPoint(3),
+                new DataPoint(2), new DataPoint(2), new DataPoint(4),
+                new DataPoint(4), new DataPoint(4), new DataPoint(4)];
+            var t = [
+                new DataPoint(1), new DataPoint(1), new DataPoint(2),
+                new DataPoint(2), new DataPoint(3), new DataPoint(3),
+                new DataPoint(2), new DataPoint(4), new DataPoint(4),
+                new DataPoint(4)];
             var cost = dtw.compute(s, t);
             cost.should.equal(0);
         });

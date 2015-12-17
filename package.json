@@ -1,6 +1,6 @@
 {
   "name": "dtw",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Dynamic time warping",
   "main": "index.js",
   "dependencies": {
@@ -13,7 +13,7 @@
   },
   "scripts": {
     "test": "mocha tests/*.js",
-    "doc": "jsdox lib/dtw.js --output doc/api/"
+    "doc": "jsdox lib/ --output doc/api/"
   },
   "repository": {
     "type": "git",
